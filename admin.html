@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Pixel Ops</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- Animated Grid Background -->
+    <div class="grid-background"></div>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>Pixel Ops</h2>
+            <p>Admin Panel</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-briefcase"></i> Projects</a>
+            <a href="#"><i class="fas fa-envelope"></i> Messages <span class="badge">12</span></a>
+            <a href="#"><i class="fas fa-users"></i> Clients</a>
+            <a href="#"><i class="fas fa-blog"></i> Blog Posts</a>
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1>Welcome back, Admin!</h1>
+            <p>Here's what's happening with your agency today.</p>
+        </header>
+
+        <!-- Stats Cards -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-rocket"></i>
+                <div>
+                    <h3>48</h3>
+                    <p>Active Projects</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div>
+                    <h3>32</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-envelope-open"></i>
+                <div>
+                    <h3>18</h3>
+                    <p>New Messages</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-dollar-sign"></i>
+                <div>
+                    <h3>$124K</h3>
+                    <p>Revenue This Month</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="activity-section">
+            <h2>Recent Activity</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <i class="fas fa-plus-circle"></i>
+                    <div>
+                        <p>New project added: <strong>E-Commerce Platform</strong></p>
+                        <span>2 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <p>Project completed: <strong>Telemedicine App</strong></p>
+                        <span>5 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p>New message from client: <strong>John Doe</strong></p>
+                        <span>1 day ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-blog"></i>
+                    <div>
+                        <p>New blog post published: <strong>Next.js in 2025</strong></p>
+                        <span>2 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <button class="btn"><i class="fas fa-plus"></i> Add New Project</button>
+                <button class="btn"><i class="fas fa-envelope"></i> View Messages</button>
+                <button class="btn"><i class="fas fa-blog"></i> Write Blog Post</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

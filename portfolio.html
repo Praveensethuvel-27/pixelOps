@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Pixel Ops</title>
+  <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Grid Background -->
+    <div class="grid-background"></div>
+<!-- Blue Neon Circular Preloader + Typing Effect -->
+<!-- New Circular Preloader with Typing Effect -->
+<div id="preloader">
+    <div class="circular-loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="typing-text">
+        <span class="typed-text"></span><span class="cursor">|</span>
+    </div>
+    <p>Initializing digital precision...</p>
+</div>
+    <header>
+        <div class="container">
+            <div class="logo glitch" data-text="Pixel Ops">Pixel Ops</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <div></div><div></div><div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p>Explore our latest projects and success stories</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="portfolio-filters container">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="education">Education</button>
+        <button class="filter-btn" data-filter="finance">Finance & Fintech</button>
+        <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+        <button class="filter-btn" data-filter="travel">Travel & Tourism</button>
+        <button class="filter-btn" data-filter="startup">Technology & Startups</button>
+    </section>
+
+    <!-- Portfolio Grid with Real Images -->
+    <section class="portfolio-grid container">
+        <div class="project-card" data-category="education">
+            <div class="project-image" style="background-image: url('https://multipurposethemes.com/wp-content/uploads/2022/11/Screen-Shot-2022-11-24-at-11.33.37.jpg');"></div>
+            <div class="project-info">
+                <h3>Learning Management System</h3>
+                <p>Custom LMS with live classes & analytics</p>
+                <span class="tag">Education</span>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="finance">
+            <div class="project-image" style="background-image: url('https://cdn.dribbble.com/userupload/46015102/file/60463b10c095300fe712f2d08b623d77.png?crop=0x0-6402x4801&format=webp&resize=1600x1200');"></div>
+            <div class="project-info">
+                <h3>Fintech Wallet Platform</h3>
+                <p>Secure mobile banking & payment gateway</p>
+                <span class="tag">Finance</span>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="healthcare">
+            <div class="project-image" style="background-image: url('https://softengi.com/wp-content/uploads/2021/12/MobileWeb-Application-for-medicine.png');"></div>
+            <div class="project-info">
+                <h3>Telemedicine Platform</h3>
+                <p>Remote healthcare with video consultation</p>
+                <span class="tag">Healthcare</span>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="ecommerce">
+            <div class="project-image" style="background-image: url('https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/647e129b753c0df5ff23cc05_6479341d794b0caa0702742d_software-dashboard-webflow-template.png');"></div>
+            <div class="project-info">
+                <h3>Custom E-Commerce Dashboard</h3>
+                <p>Full-stack shopping with inventory management</p>
+                <span class="tag">E-Commerce</span>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="travel">
+            <div class="project-image" style="background-image: url('https://meta-q.cdn.bubble.io/cdn-cgi/image/w=1600,h=900,f=auto,dpr=2,fit=cover,q=85/f1747307962360x244482739560556450/Travel%20Booking%20System%201.png');"></div>
+            <div class="project-info">
+                <h3>Travel Booking Portal</h3>
+                <p>Complete booking system with CRM integration</p>
+                <span class="tag">Travel</span>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="startup">
+            <div class="project-image" style="background-image: url('https://cdn.dribbble.com/userupload/43507872/file/original-df7180b18e97f8487d50bd65cba0a013.png');"></div>
+            <div class="project-info">
+                <h3>SaaS Analytics Dashboard</h3>
+                <p>Real-time MVP for AI-powered startup</p>
+                <span class="tag">Startups</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Have a Project in Mind?</h2>
+            <p>Let's bring your ideas to life</p>
+            <button class="btn large">Start a Project</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pixel Ops. All rights reserved.</p>
+            <a href="privacy.html">Privacy Policy</a> | 
+           <a href="terms.html">Terms of Service</a>
+        </div>
+    </footer>
+
+   <script src="script.js"></script>
+    <script src="grid.js"></script>
+    <script>
+        // Portfolio Filter (keep this)
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        setTimeout(() => { card.style.opacity = '1'; }, 100);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
