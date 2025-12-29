@@ -1,9 +1,8 @@
-// Mobile Menu Toggle (if already irundha keep it)
 const mobileMenu = document.querySelector('.mobile-menu');
-const navUl = document.querySelector('nav ul');
+const navLinks = document.querySelector('.nav-links');
 
 mobileMenu.addEventListener('click', () => {
-    navUl.classList.toggle('active');
+    navLinks.classList.toggle('active');
     mobileMenu.classList.toggle('active');
 });
 
@@ -58,3 +57,4 @@ window.addEventListener('load', () => {
         preloader.classList.add('preloader-hidden');
     }, 6000);
 });
+  

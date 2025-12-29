@@ -4,43 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Pixel Ops</title>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Animated Grid Background */
+        .grid-background {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px),
+                        linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+/* Preloader - Modern Circular */
+#preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f0f1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease-out, visibility 1s ease-out;
+        }
+
+        /* Waveform Loader */
+        .waveform-loader {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .wave-bar {
+            width: 10px;
+            height: 30px;
+            background: #00ffff;
+            margin: 0 4px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ffff;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) { animation-delay: 0s; background: #00ffff; }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; background: #00ffff; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; background: #00ffff; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; background: #00ffff; }
+        .wave-bar:nth-child(5) { animation-delay: 0.4s; background: #00ffff; }
+        .wave-bar:nth-child(6) { animation-delay: 0.5s; background: #00ffff; }
+        .wave-bar:nth-child(7) { animation-delay: 0.6s; background: #00ffff; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(3); }
+        }
+
+        /* Typing Animation for PixelOps */
+        .typing-text {
+            font-size: 2.7rem;
+            font-weight: 800;
+            color: #00ffff;
+            text-shadow: 0 0 30px #00ffff;
+            margin-bottom: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #00ffff;
+            width: 1px;
+            animation: typing 3s steps(8, end) forwards, blink 1s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 8ch; } /* Adjust based on text length ("PixelOps" = 8 chars + space) */
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #00ffff; }
+        }
+
+        #preloader p {
+            font-size: 1.3rem;
+            color: #00ffff;
+            opacity: 0.8;
+            text-shadow: 0 0 15px #00ffff;
+        }
+
+        .preloader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Portfolio Filters - Now Wraps Nicely on Mobile (2-3 rows) */
+       
+        .filters-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .filter-btn {
+            padding: 12px 28px;
+            background: rgba(26,26,46,0.8);
+            border: 1px solid rgba(0,255,255,0.3);
+            color: #00ffff;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #7ac8e0;
+            border-color: #00ffff;
+            box-shadow: 0 0 25px rgba(0,255,255,0.6);
+            transform: scale(1.05);
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: rgba(26,26,46,0.6);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0,255,255,0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.6s ease;
+            cursor: pointer;
+        }
+        .project-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 30px rgba(0,255,255,0.3);
+        }
+        .project-info {
+            padding: 30px;
+        }
+        .project-info h3 {
+            color: #00ffff;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .project-info p {
+            margin-bottom: 15px;
+            color: #fffdfd;
+            line-height: 1.6;
+        }
+        .tag {
+            background: #fffdfd;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #00ffff;
+            font-weight: 600;
+        }
+        .project-card:hover {
+            transform: translateY(-25px);
+            box-shadow: 0 0 70px rgba(0,255,255,0.6);
+            border-color: #00ffff;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding: 50px 15px;
+            }
+            .project-image {
+                height: 220px;
+            }
+            .project-info {
+                padding: 25px;
+            }
+            .project-info h3 {
+                font-size: 1.6rem;
+            }
+            .typing-text {
+                font-size: 2.8rem;
+            }
+            /* Filters will naturally wrap into 2-3 rows on small screens */
+            .filter-btn {
+                padding: 10px 22px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Animated Grid Background -->
     <div class="grid-background"></div>
-<!-- Blue Neon Circular Preloader + Typing Effect -->
-<!-- New Circular Preloader with Typing Effect -->
+
+    <!-- Preloader -->
+    <!-- Preloader -->
 <div id="preloader">
-    <div class="circular-loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+    <div class="waveform-loader">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
     </div>
-    <div class="typing-text">
-        <span class="typed-text"></span><span class="cursor">|</span>
-    </div>
-    <p>Initializing digital precision...</p>
+    <div class="typing-text">PixelOps...</div>
+ 
 </div>
+
     <header>
         <div class="container">
             <div class="logo glitch" data-text="Pixel Ops">Pixel Ops</div>
             <nav>
-                <ul>
-                    <li><a href="index.html#home">Home</a></li>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="mobile-menu">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </nav>
-            <div class="mobile-menu">
-                <div></div><div></div><div></div>
-            </div>
         </div>
     </header>
 
@@ -52,20 +272,22 @@
         </div>
     </section>
 
-    <!-- Filters -->
-    <section class="portfolio-filters container">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="education">Education</button>
-        <button class="filter-btn" data-filter="finance">Finance & Fintech</button>
-        <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-        <button class="filter-btn" data-filter="travel">Travel & Tourism</button>
-        <button class="filter-btn" data-filter="startup">Technology & Startups</button>
+    <!-- Filters - Now Wraps Beautifully on Mobile -->
+    <section class="portfolio-filters">
+        <div class="filters-wrapper">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+            <button class="filter-btn" data-filter="finance">Finance & Fintech</button>
+            <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+            <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="travel">Travel & Tourism</button>
+            <button class="filter-btn" data-filter="startup">Technology & Startups</button>
+        </div>
     </section>
 
-    <!-- Portfolio Grid with Real Images -->
-    <section class="portfolio-grid container">
-        <div class="project-card" data-category="education">
+    <!-- Portfolio Grid with AOS -->
+    <section class="portfolio-grid">
+        <div class="project-card" data-category="education" data-aos="fade-up" data-aos-delay="100">
             <div class="project-image" style="background-image: url('https://multipurposethemes.com/wp-content/uploads/2022/11/Screen-Shot-2022-11-24-at-11.33.37.jpg');"></div>
             <div class="project-info">
                 <h3>Learning Management System</h3>
@@ -74,7 +296,7 @@
             </div>
         </div>
 
-        <div class="project-card" data-category="finance">
+        <div class="project-card" data-category="finance" data-aos="fade-up" data-aos-delay="200">
             <div class="project-image" style="background-image: url('https://cdn.dribbble.com/userupload/46015102/file/60463b10c095300fe712f2d08b623d77.png?crop=0x0-6402x4801&format=webp&resize=1600x1200');"></div>
             <div class="project-info">
                 <h3>Fintech Wallet Platform</h3>
@@ -83,7 +305,7 @@
             </div>
         </div>
 
-        <div class="project-card" data-category="healthcare">
+        <div class="project-card" data-category="healthcare" data-aos="fade-up" data-aos-delay="300">
             <div class="project-image" style="background-image: url('https://softengi.com/wp-content/uploads/2021/12/MobileWeb-Application-for-medicine.png');"></div>
             <div class="project-info">
                 <h3>Telemedicine Platform</h3>
@@ -92,7 +314,7 @@
             </div>
         </div>
 
-        <div class="project-card" data-category="ecommerce">
+        <div class="project-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="400">
             <div class="project-image" style="background-image: url('https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/647e129b753c0df5ff23cc05_6479341d794b0caa0702742d_software-dashboard-webflow-template.png');"></div>
             <div class="project-info">
                 <h3>Custom E-Commerce Dashboard</h3>
@@ -101,7 +323,7 @@
             </div>
         </div>
 
-        <div class="project-card" data-category="travel">
+        <div class="project-card" data-category="travel" data-aos="fade-up" data-aos-delay="500">
             <div class="project-image" style="background-image: url('https://meta-q.cdn.bubble.io/cdn-cgi/image/w=1600,h=900,f=auto,dpr=2,fit=cover,q=85/f1747307962360x244482739560556450/Travel%20Booking%20System%201.png');"></div>
             <div class="project-info">
                 <h3>Travel Booking Portal</h3>
@@ -110,7 +332,7 @@
             </div>
         </div>
 
-        <div class="project-card" data-category="startup">
+        <div class="project-card" data-category="startup" data-aos="fade-up" data-aos-delay="600">
             <div class="project-image" style="background-image: url('https://cdn.dribbble.com/userupload/43507872/file/original-df7180b18e97f8487d50bd65cba0a013.png');"></div>
             <div class="project-info">
                 <h3>SaaS Analytics Dashboard</h3>
@@ -133,14 +355,28 @@
         <div class="container">
             <p>&copy; 2025 Pixel Ops. All rights reserved.</p>
             <a href="privacy.html">Privacy Policy</a> | 
-           <a href="terms.html">Terms of Service</a>
+            <a href="terms.html">Terms of Service</a>
         </div>
     </footer>
 
-   <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
     <script src="grid.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Portfolio Filter (keep this)
+        // Preloader + AOS Init
+        window.addEventListener('load', function() {
+            
+
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+        });
+
+        // Portfolio Filter
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
@@ -151,13 +387,18 @@
 
                 const filter = btn.getAttribute('data-filter');
 
-                projectCards.forEach(card => {
+                projectCards.forEach((card, index) => {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
                         card.style.display = 'block';
-                        card.style.opacity = '0';
-                        setTimeout(() => { card.style.opacity = '1'; }, 100);
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            AOS.refresh();
+                        }, 100);
                     } else {
-                        card.style.display = 'none';
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
                     }
                 });
             });

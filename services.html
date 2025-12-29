@@ -6,46 +6,52 @@
     <title>Our Services - Pixel Ops</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Animated Grid Background -->
     <div class="grid-background"></div>
-<!-- Blue Neon Circular Preloader + Typing Effect -->
-<!-- New Circular Preloader with Typing Effect -->
-<div id="preloader">
-    <div class="circular-loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-    <div class="typing-text">
-        <span class="typed-text"></span><span class="cursor">|</span>
-    </div>
-    <p>Initializing digital precision...</p>
-</div>
-    <header>
-        <div class="container">
-            <div class="logo glitch" data-text="Pixel Ops">Pixel Ops</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <div></div><div></div><div></div>
-            </div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="waveform-loader">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
         </div>
-    </header>
+        <div class="typing-text">PixelOps...</div>
+    </div>
+
+    <header>
+    <div class="container">
+        <div class="logo glitch" data-text="Pixel Ops">Pixel Ops</div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mobile-menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+    </div>
+</header>
 
     <!-- Services Hero -->
-    <section class="services-hero">
+    <section class="services-hero" data-aos="fade-down" data-aos-duration="1000">
         <div class="container">
             <h1>Our Services</h1>
             <p>We deliver precision digital solutions tailored to your business needs. From development to design, we've got you covered.</p>
@@ -55,7 +61,7 @@
     <!-- Services Grid - Detailed -->
     <section class="services-detail container">
         <div class="services-grid-detail">
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-code"></i>
                 <h3>Software Development</h3>
                 <p>Custom desktop, mobile, and enterprise applications built with cutting-edge technologies. We create scalable, secure, and high-performance software tailored to your exact requirements.</p>
@@ -67,7 +73,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-globe"></i>
                 <h3>Web Development</h3>
                 <p>Modern, responsive websites and web applications that load fast and look stunning on all devices. Built with the latest frameworks for optimal performance.</p>
@@ -79,7 +85,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-headset"></i>
                 <h3>Tech Support</h3>
                 <p>24/7 technical support and maintenance for your systems. We keep your infrastructure running smoothly with proactive monitoring and rapid issue resolution.</p>
@@ -91,7 +97,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-lightbulb"></i>
                 <h3>IT Consulting</h3>
                 <p>Expert guidance on technology strategy, digital transformation, cloud migration, and cybersecurity. We help you make informed decisions for long-term success.</p>
@@ -103,7 +109,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                 <i class="fas fa-robot"></i>
                 <h3>Web Automation</h3>
                 <p>Custom automation tools and scripts to streamline repetitive tasks, data collection, testing, and workflow optimization.</p>
@@ -115,7 +121,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                 <i class="fas fa-palette"></i>
                 <h3>Graphic Design</h3>
                 <p>Professional visual branding including logos, marketing materials, infographics, and social media graphics that make your brand stand out.</p>
@@ -127,7 +133,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="700">
                 <i class="fas fa-mobile-alt"></i>
                 <h3>UI/UX Design</h3>
                 <p>User-centered interface design with wireframes, prototypes, and seamless experiences that convert visitors into customers.</p>
@@ -139,7 +145,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="800">
                 <i class="fas fa-microchip"></i>
                 <h3>IoT Development</h3>
                 <p>Smart connected devices and systems for home automation, industrial monitoring, and custom IoT solutions with secure data handling.</p>
@@ -151,7 +157,7 @@
                 </ul>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="900">
                 <i class="fas fa-rocket"></i>
                 <h3>Product Development</h3>
                 <p>End-to-end product creation from concept validation to MVP development, launch, and scaling. We turn ideas into successful digital products.</p>
@@ -166,7 +172,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="final-cta">
+    <section class="final-cta" data-aos="zoom-in" data-aos-duration="800">
         <div class="container">
             <h2>Ready to Transform Your Business?</h2>
             <p>Let's discuss how our services can help you achieve your goals</p>
@@ -184,5 +190,16 @@
 
     <script src="grid.js"></script>
     <script src="script.js"></script>
+    
+    <!-- AOS Script - Must be at the end -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true, // Animation happens only once when scrolling down
+            offset: 100
+        });
+    </script>
 </body>
 </html>

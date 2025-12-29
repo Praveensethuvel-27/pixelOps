@@ -5,80 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Pixel Ops</title>
     <link rel="stylesheet" href="style.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Animated Grid Background -->
     <div class="grid-background"></div>
-<!-- Blue Neon Circular Preloader + Typing Effect -->
-<!-- New Circular Preloader with Typing Effect -->
-<div id="preloader">
-    <div class="circular-loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-    <div class="typing-text">
-        <span class="typed-text"></span><span class="cursor">|</span>
-    </div>
-    <p>Initializing digital precision...</p>
-</div>
-    <header>
-        <div class="container">
-            <div class="logo glitch" data-text="Pixel Ops">Pixel Ops</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <div></div><div></div><div></div>
-            </div>
-        </div>
-    </header>
 
+    <!-- Preloader -->
+   <!-- Preloader -->
+    <div id="preloader">
+        <div class="waveform-loader">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+        </div>
+        <div class="typing-text">PixelOps...</div>
+    </div>
+
+    <header>
+    <div class="container">
+        <div class="logo glitch" data-text="Pixel Ops">Pixel Ops</div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mobile-menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+    </div>
+</header>
     <!-- About Hero -->
     <section class="about-hero">
         <div class="container">
-            <h1>Innovating Today, Empowering Tomorrow</h1>
-            <p>At Pixel Ops, we’re all about more than just tech — we’re about making a difference. Whether it’s smart software or flexible web and mobile apps, our goal is to give businesses the resources they need to shine in a digital world. With our strong know-how and a focus on the future, we support startups, small businesses, and big companies in bringing their best ideas to life.</p>
+            <h1 class="section-title glow">Innovating Today, Empowering Tomorrow</h1>
+            <p class="section-subtitle">At Pixel Ops, we’re all about more than just tech — we’re about making a difference. Whether it’s smart software or flexible web and mobile apps, our goal is to give businesses the resources they need to shine in a digital world. With our strong know-how and a focus on the future, we support startups, small businesses, and big companies in bringing their best ideas to life.</p>
         </div>
     </section>
 
-    <!-- What We Do Best -->
-    <section class="what-we-do container">
-        <h2>What We Do Best</h2>
-        <div class="services-grid">
-            <div class="card">
-                <i class="fas fa-globe"></i>
-                <h3>Web & Mobile App Development</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Digital Strategy & Transformation</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud & DevOps Solutions</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-headset"></i>
-                <h3>IT & Tech Support</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-robot"></i>
-                <h3>Automation (Excel, Web, Workflow)</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-palette"></i>
-                <h3>UI/UX, Branding & Visual Design</h3>
+    <!-- What Sets Us Apart - 3x3 Grid -->
+    <section class="what-we-do">
+        <div class="container">
+            <h2 class="section-title glow">What Sets Us Apart</h2>
+            <p class="section-subtitle">We combine creativity, technical expertise, and client-first thinking to deliver results that exceed expectations.</p>
+
+            <div class="about-grid">
+                <div class="about-card slide-in">
+                    <i class="fas fa-bolt pulse-icon"></i>
+                    <h3>Lightning Fast Delivery</h3>
+                    <p>We move quickly without cutting corners — high-quality solutions delivered on tight timelines.</p>
+                </div>
+                <div class="about-card slide-in">
+                    <i class="fas fa-shield-alt spin-icon"></i>
+                    <h3>Rock-Solid Security</h3>
+                    <p>Every project is built with enterprise-grade security and best practices from day one.</p>
+                </div>
+                <div class="about-card slide-in">
+                    <i class="fas fa-infinity spin-icon"></i>
+                    <h3>Scalable & Future-Proof</h3>
+                    <p>Solutions designed to grow with your business — no rewrites needed down the road.</p>
+                </div>
+
+                <div class="about-card slide-in">
+                    <i class="fas fa-users pulse-icon"></i>
+                    <h3>Client-Centric Approach</h3>
+                    <p>Your vision is our priority. Clear communication and collaboration at every step.</p>
+                </div>
+                <div class="about-card slide-in">
+                    <i class="fas fa-lightbulb spin-icon"></i>
+                    <h3>Innovative Thinking</h3>
+                    <p>We don’t just build what you ask — we suggest smarter, modern ways to achieve your goals.</p>
+                </div>
+                <div class="about-card slide-in">
+                    <i class="fas fa-headset pulse-icon"></i>
+                    <h3>24/7 Dedicated Support</h3>
+                    <p>Post-launch maintenance, updates, and instant help whenever you need it.</p>
+                </div>
+
+                <div class="about-card slide-in">
+                    <i class="fas fa-rocket spin-icon"></i>
+                    <h3>Cutting-Edge Tech</h3>
+                    <p>We use the latest tools and frameworks to build fast, modern, and efficient products.</p>
+                </div>
+                <div class="about-card slide-in">
+                    <i class="fas fa-chart-line pulse-icon"></i>
+                    <h3>Proven Results</h3>
+                    <p>Track record of successful projects across industries with measurable business impact.</p>
+                </div>
+                <div class="about-card slide-in">
+                    <i class="fas fa-handshake spin-icon"></i>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees. Clear quotes and flexible packages that fit your budget.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -86,7 +119,7 @@
     <!-- Vision -->
     <section class="vision-mission">
         <div class="container">
-            <h2>Our Vision</h2>
+            <h2 class="section-title glow">Our Vision</h2>
             <p class="large-text">Our goal is to be a top player in tech innovation, transforming industries and helping businesses with solutions that work well now and in the future. We see a digital world where every organization, big or small, has the tools they need to succeed confidently.</p>
         </div>
     </section>
@@ -94,31 +127,33 @@
     <!-- Mission -->
     <section class="vision-mission alternate">
         <div class="container">
-            <h2>Our Mission</h2>
+            <h2 class="section-title glow">Our Mission</h2>
             <p class="large-text">To deliver high-quality, performance-driven, and user-focused technology solutions that help businesses innovate faster, operate smarter, and grow sustainably.</p>
         </div>
     </section>
 
     <!-- Our Promise -->
-    <section class="our-promise container">
-        <h2>Our Promise to You</h2>
-        <p>At Pixel Ops, your success is our purpose. We go beyond delivery — we partner, we support, and we scale with you.<br><br>Our team works as an extension of yours, ensuring that every solution is aligned with your vision, goals, and future growth.</p>
-        <div class="promise-grid">
-            <div class="promise-card">
-                <i class="fas fa-tasks"></i>
-                <h3>End-to-End Project Ownership</h3>
-            </div>
-            <div class="promise-card">
-                <i class="fas fa-running"></i>
-                <h3>Flexible, Agile Workflows</h3>
-            </div>
-            <div class="promise-card">
-                <i class="fas fa-tools"></i>
-                <h3>Long-Term Maintenance & Support</h3>
-            </div>
-            <div class="promise-card">
-                <i class="fas fa-clock"></i>
-                <h3>Transparency & On-Time Delivery</h3>
+    <section class="our-promise">
+        <div class="container">
+            <h2 class="section-title glow">Our Promise to You</h2>
+            <p class="section-subtitle">At Pixel Ops, your success is our purpose. We go beyond delivery — we partner, we support, and we scale with you.<br><br>Our team works as an extension of yours, ensuring that every solution is aligned with your vision, goals, and future growth.</p>
+            <div class="promise-grid">
+                <div class="promise-card slide-in">
+                    <i class="fas fa-tasks pulse-icon"></i>
+                    <h3>End-to-End Project Ownership</h3>
+                </div>
+                <div class="promise-card slide-in">
+                    <i class="fas fa-running pulse-icon"></i>
+                    <h3>Flexible, Agile Workflows</h3>
+                </div>
+                <div class="promise-card slide-in">
+                    <i class="fas fa-tools spin-icon"></i>
+                    <h3>Long-Term Maintenance & Support</h3>
+                </div>
+                <div class="promise-card slide-in">
+                    <i class="fas fa-clock spin-icon"></i>
+                    <h3>Transparency & On-Time Delivery</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -136,10 +171,20 @@
         <div class="container">
             <p>&copy; 2025 Pixel Ops. All rights reserved.</p>
             <a href="privacy.html">Privacy Policy</a> | 
-           <a href="terms.html">Terms of Service</a>
+            <a href="terms.html">Terms of Service</a>
         </div>
     </footer>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
     <script src="grid.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true, // Animation happens only once when scrolling down
+            offset: 100
+        });
+    </script>
 </body>
 </html>
